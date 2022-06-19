@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Anniversary Special</title>
+</head>
+<body background="/static/pic/1.png" >
+    <div style="font-family:Copperplate, Papyrus, fantasy;font-size:41px;color:Brown;text-align: center">
+            <p style="font-family:Copperplate, Papyrus, fantasy;font-size:51px;color:Green;text-align: center" >Happy Anniversary!</p>
+              <a href="{{ url_for('welcome') }}" >Home </a> <br><br>
+        {% if index < max_index %}
+            <a href="{{ url_for('card_view', index=index+1) }}">
+               Next
+            </a>
+        {% else %}
+            <a href="{{ url_for('card_view', index=0) }}" >
+                Start over
+            </a>
+        {% endif %}
+
+         </div>
+    <br>
+    <div style="text-align: center">
+    <img src = "{{ url_for('static', filename=card)}}" >
+
+    </div>
+
+    <br><br><br><br><br><br><br><br><br><br><br><br>
+    <footer style="font-family:Trebuchet MS;text-align: center">
+  <p >Credits: Anand Maragur
+      <br>
+  <a href="mailto:anandmaragur@gmail.com">anandmaragur@gmail.com</a>
+  </p>
+</footer>
+</body>
+</html>
